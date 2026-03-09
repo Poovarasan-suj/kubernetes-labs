@@ -1,0 +1,17 @@
+
+### List or describe all clusters
+This example policy includes the minimum permissions required to list and describe all clusters in your account. An IAM principal must be able to list and describe clusters to use the update-kubeconfig AWS CLI command.
+
+{
+    "Version":"2012-10-17",		 	 	 
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "eks:DescribeCluster",
+                "eks:ListClusters"
+            ],
+            "Resource": "*"
+        }
+    ]
+}

@@ -1,0 +1,10 @@
+  mapUsers: |
+  - userarn: arn:aws:iam::972583819228:user/dev-user
+    username: dev-user
+    groups:
+      - dev-group
+
+  - userarn: arn:aws:iam::972583819228:user/readonly-user
+    username: readonly-user
+    groups:
+      - readonly-group

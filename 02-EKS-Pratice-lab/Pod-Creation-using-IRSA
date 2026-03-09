@@ -1,0 +1,13 @@
+
+##Create a Pod that uses the s3-read-sa ServiceAccount to access S3 resources using IRSA
+apiVersion: v1
+kind: Pod
+metadata:
+  name: s3-reader
+spec:
+  serviceAccountName: s3-read-sa
+  containers:
+  - name: awscli
+    image: amazonlinux
+    command: ["/bin/sh"]
+    args: ["-c", "yum install -y aws-cli && aws s3 ls"]
