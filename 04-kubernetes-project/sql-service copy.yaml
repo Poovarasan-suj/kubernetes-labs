@@ -1,0 +1,16 @@
+
+##Creating a Frontend service to expose Frontend Deployment
+
+  apiVersion: v1
+  kind: Service
+  metadata:
+    name: frontend-service
+    namespace: cloud-project
+  spec:
+    type: ClusterIP
+    selector:
+      app: frontend
+    ports:
+      - protocol: TCP
+        port: 80
+        targetPort: 80

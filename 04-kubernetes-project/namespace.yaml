@@ -1,0 +1,7 @@
+##Create Namespace
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: cloud-project
+  labels:
+    name: production

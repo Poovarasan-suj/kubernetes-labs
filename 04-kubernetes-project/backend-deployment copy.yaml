@@ -1,0 +1,22 @@
+##Creating a frontend Deployment for MySQL
+
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: frontend
+    namespace: cloud-project
+  spec:
+    replicas: 3
+    selector:
+      matchLabels:
+        app: frontend
+    template:
+      metadata:
+        labels:
+          app: frontend
+      spec:
+        containers:
+        - name: frontend
+          image: nginx
+          ports:
+          - containerPort: 80

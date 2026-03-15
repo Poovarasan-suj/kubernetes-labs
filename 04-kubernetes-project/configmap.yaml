@@ -1,0 +1,11 @@
+##Create ConfigMap for application configuration
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: my-config
+  namespace: cloud-project
+data:
+  APP_ENV: "production"
+  APP_VERSION: "v1"
+  APP_DEBUG: "false"

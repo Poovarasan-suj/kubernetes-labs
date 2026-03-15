@@ -1,0 +1,21 @@
+
+
+##Creating an Ingress resource to route traffic to the Frontend service
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: cloud-ingress
+  namespace: cloud-project
+spec:
+  ingressClassName: nginx
+  rules:
+  - http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: frontend-service
+            port:
+              number: 80

@@ -1,0 +1,15 @@
+
+##CReate PersistentVolume for MySQL data storage
+##Note: This is a simple example using hostPath, which is not suitable for production. In a real environment, consider using a more robust storage solution.
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mysql-pv
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+  - ReadWriteOnce
+  hostPath:
+    path: /data/mysql
+  
