@@ -1,0 +1,22 @@
+labels:
+  app: myapp
+
+container:
+    name: mydevopsapp
+    image: poovarasane/mydevopsapp:v1
+    port: 5000
+
+replicaCount: 3
+
+service:
+  port: 80
+
+ingress:
+  enabled: true
+  className: nginx
+  path: /
+
+configMap:
+  ENV: "production"
+secret:
+  DB_PASSWORD: "bXlwYXNzd29yZDEyMwo="

@@ -1,0 +1,13 @@
+#apiVersion: The chart API version (required)
+#name: The name of the chart (required)
+#version: The version of the chart (required)
+#description: A single-sentence description of this project (optional)
+
+
+
+apiVersion: v2
+name: mywebapp
+description: A Helm chart for deploying my web app
+type: application
+version: 0.1.0
+appVersion: "1.0"

@@ -1,0 +1,126 @@
+#  Helm Basics – Nginx Deployment in Kubernetes
+
+##  Overview
+
+This project demonstrates the **basic usage of Helm in Kubernetes**, including:
+
+* Installing Helm
+* Adding a Helm repository
+* Searching for charts
+* Rendering Kubernetes manifests
+* Deploying an application using Helm
+
+---
+
+##  Prerequisites
+
+* Kubernetes cluster (EKS / Minikube / Kubeadm)
+* `kubectl` configured
+* Internet access
+
+---
+
+## 🔧 Step 1: Install Helm
+
+```bash
+curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-4
+chmod 700 get_helm.sh
+./get_helm.sh
+```
+
+Verify installation:
+
+```bash
+helm version
+```
+
+---
+
+##  Step 2: Add Helm Repository
+
+Add Bitnami repository:
+
+```bash
+helm repo add bitnami https://charts.bitnami.com/bitnami
+```
+
+Update repo:
+
+```bash
+helm repo update
+```
+
+---
+
+##  Step 3: Search Helm Charts
+
+```bash
+helm search repo
+```
+
+Search for specific chart:
+
+```bash
+helm search repo nginx
+```
+
+---
+
+##  Step 4: Render YAML (Dry Run)
+
+Before installing, you can preview the Kubernetes manifests:
+
+```bash
+helm template myapp bitnami/nginx
+```
+
+This helps to:
+
+* Understand generated resources
+* Debug configurations
+* Customize values before deployment
+
+---
+
+##  Step 5: Install Nginx using Helm
+
+```bash
+helm install myapp bitnami/nginx
+```
+
+---
+
+##  Step 6: Verify Deployment
+
+Check Helm release:
+
+```bash
+helm list
+```
+
+Check Kubernetes resources:
+
+```bash
+kubectl get pods
+kubectl get svc
+```
+
+---
+
+## Step 7: Access Application
+
+If service type is `LoadBalancer`, get external URL:
+
+```bash
+kubectl get svc
+```
+
+Then access in browser:
+
+```
+http://<EXTERNAL-IP>
+```
+
+
+
+

@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mydevops-config
+data:
+  ENV: {{ .Values.configMap.ENV }}
+
