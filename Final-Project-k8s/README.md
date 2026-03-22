@@ -2,7 +2,7 @@
 ## Project Output
 ![Application running](./outputs/ingress-output-helm-deployment.png)
 
-
+![Kubernetes deployment by shell scripting ](./outputs/Deployed by shell scripting.png)
 ##  Project Overview
 
 This project demonstrates a complete **DevOps workflow** from application development to deployment on Kubernetes using:
